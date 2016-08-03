@@ -11,6 +11,9 @@ use VanLonden\Pusher\Models\PastPushError;
 
 class Pusher
 {
+    /**
+     * test
+     */
     const END_POINT_URI = 'https://fcm.googleapis.com/fcm/send';
 
     /**
