@@ -2,6 +2,7 @@
 
 return [
     'user_model' => VanLonden\Pusher\Models\User::class,
+    'user_pk' => 'id',
 
     'tables' => [
         'users' => 'users',

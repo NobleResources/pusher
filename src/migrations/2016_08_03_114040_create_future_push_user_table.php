@@ -23,7 +23,7 @@ class CreateFuturePushUserTable extends Migration
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->foreign('user_id')
-                ->references('user_id')->on(config('pusher.tables.users'))
+                ->references(config('pusher.user_pk'))->on(config('pusher.tables.users'))
                 ->onDelete('cascade')->onUpdate('cascade');
         });
     }
