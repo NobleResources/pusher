@@ -143,8 +143,6 @@ class Pusher
     {
         $user = $users[$index];
 
-        $pushError = new PastPushError(['user_id' => $user->user_id]);
-
         if (isset($result->registration_id)) {
             $this->updateRegistrationId($user, $result->registration_id);
         }
@@ -155,7 +153,10 @@ class Pusher
                 $user->save();
             }
 
-            $push->errors()->save($pushError);
+            $push->errors()->create([
+                'user_id' => $this->getUserId($user),
+                'error' => $result->error
+            ]);
         }
     }
 
@@ -167,6 +168,18 @@ class Pusher
     {
         $user->registration_id = $registrationId;
         $user->save();
+    }
+
+    /**
+     * @param $user
+     *
+     * @return mixed
+     */
+    protected function getUserId($user)
+    {
+        $idColumn = config('pusher.user_pk');
+        $userId = $user->$idColumn;
+        return $userId;
     }
 
 }
