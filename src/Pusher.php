@@ -12,7 +12,7 @@ use VanLonden\Pusher\Models\PastPushError;
 class Pusher
 {
     /**
-     * test
+     * @var string
      */
     const END_POINT_URI = 'https://fcm.googleapis.com/fcm/send';
 
