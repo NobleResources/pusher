@@ -1,0 +1,15 @@
+{
+  "name": "vanlonden/pusher",
+  "description": "Firebase wrapper library for Laravel",
+  "authors": [
+    {
+      "name": "Jordy van Londen",
+      "email": "jordy.vanlonden@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "guzzlehttp/guzzle": "^6.2",
+    "doctrine/dbal": "^2.5"
+  }
+}
