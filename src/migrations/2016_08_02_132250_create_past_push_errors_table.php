@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePushNotificationResults extends Migration
+class CreatePastPushErrorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreatePushNotificationResults extends Migration
         Schema::create(config('pusher.tables.past_push_errors'), function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('past_push_id');
-            $table->integer('user_id');
+            $table->unsignedInteger('user_id');
             $table->string('error');
             $table->timestamps();
 

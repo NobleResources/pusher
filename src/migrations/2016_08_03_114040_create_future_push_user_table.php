@@ -15,7 +15,7 @@ class CreateFuturePushUserTable extends Migration
         Schema::create(config('pusher.tables.future_push_user'), function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('future_push_id');
-            $table->integer('user_id');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
 
             $table->foreign('future_push_id')
