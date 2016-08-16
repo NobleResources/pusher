@@ -3,6 +3,7 @@
 namespace VanLonden\Pusher;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
 class PusherServiceProvider extends ServiceProvider
