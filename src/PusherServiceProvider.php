@@ -30,7 +30,7 @@ class PusherServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Pusher::class, function ($app) {
+        App::singleton('pusher', function ($app) {
            return new Pusher(
                new Client(),
                config('pusher.server_key'),
